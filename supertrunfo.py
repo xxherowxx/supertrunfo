@@ -54,4 +54,4 @@ def jogar():
 
 if name == "main":
     jogar()
-```
+``` 
