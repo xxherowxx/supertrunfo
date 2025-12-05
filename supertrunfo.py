@@ -1,7 +1,6 @@
-```python
 import random
 
-Cartas do jogo - países com características
+#Cartas do jogo dos países com características
 cartas = [
     {"nome": "Brasil", "populacao": 213, "pib": 1.8, "area": 8516},
     {"nome": "Estados Unidos", "populacao": 331, "pib": 21.4, "area": 9834},
@@ -33,4 +32,25 @@ def jogar():
     if escolha == "1":
         categoria = "populacao"
     elif escolha == "2":
-        categoria = "pib"
+        categoria = "pib"
+    elif escolha == "3":
+        categoria = "area"
+    else:
+        print("Categoria inválida!")
+        return
+
+    valor_jogador = carta_jogador[categoria]
+    valor_computador = carta_computador[categoria]
+
+    print(f"\nSua carta: {carta_jogador['nome']} - {categoria}: {valor_jogador}")
+    print(f"Carta do computador: {carta_computador['nome']} - {categoria}: {valor_computador}\n")
+
+    if valor_jogador > valor_computador:
+        print("Você venceu!")
+    elif valor_jogador < valor_computador:
+        print("Você perdeu!")
+    else:
+        print("Empate!")
+
+jogar()
+
